@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Gender } from '../gender';
+import { AuthenticationService } from '../../authentication.service';
+import {  MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-signup',
@@ -13,11 +15,14 @@ export class SignupComponent implements OnInit {
 
   signUpForm : FormGroup;
   genders : any;
-  constructor(private fb : FormBuilder) {
+  errorMessage: string;
+  showError : boolean = false;
+
+  constructor(private fb : FormBuilder , private _authenticationService : AuthenticationService , private _matDialog : MatDialog) {
     this.genders = [
       {name : Gender.MALE , value : Gender.MALE },
       {name : Gender.FEMALE , value : Gender.FEMALE}
-    ]
+    ];
     this.signUpForm = fb.group({
       name : ['',Validators.required],
       email : ['',Validators.required],
@@ -25,7 +30,7 @@ export class SignupComponent implements OnInit {
       retypePassword : ['',Validators.required],
       mobile : ['',Validators.required],
       gender : [Gender.MALE ,Validators.required] ,
-    })
+    });
   }
 
 
@@ -33,7 +38,13 @@ export class SignupComponent implements OnInit {
   }
 
   onSignUp(value : any){
-    console.log(value);
+    this._authenticationService.signUpWithEmail(value.email , value.password).then((userInfo: any)=>{
+      console.log(userInfo)
+    }).catch((error) =>{
+      this.errorMessage = error.message;
+      this.showError = true;
+      this._matDialog.open()
+    })
   }
 
 }

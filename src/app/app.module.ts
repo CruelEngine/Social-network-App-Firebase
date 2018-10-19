@@ -3,7 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 
+
+//Component
 import { AppComponent } from './app.component';
+import { ErrorAlertComponent } from './error-alert/error-alert.component';
+import { SignupComponent } from './authentication/signup/signup.component';
+
 
 import { AuthenticationModule } from './authentication/authentication.module';
 import { AngularFireModule } from '@angular/fire';
@@ -22,12 +27,12 @@ import { RouterModule } from '@angular/router';
 
 import { AuthenticationService } from './authentication.service';
 import { UserService } from './user.service';
-import { SignupComponent } from './authentication/signup/signup.component';
 import { Passwordequalvalidator } from './utils/password-equal-validator.directive';
 
 
 //Material Imports
-import { MatCheckboxModule , MatInputModule , MatFormFieldModule,MatRadioModule,MatButtonModule  } from '@angular/material';
+import { MatCheckboxModule , MatInputModule , MatFormFieldModule,MatRadioModule,MatButtonModule , MatCardModule , MatDialogModule  } from '@angular/material';
+
 
 
 @NgModule({
@@ -35,6 +40,7 @@ import { MatCheckboxModule , MatInputModule , MatFormFieldModule,MatRadioModule,
     AppComponent,
     SignupComponent,
     Passwordequalvalidator,
+    ErrorAlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +55,9 @@ import { MatCheckboxModule , MatInputModule , MatFormFieldModule,MatRadioModule,
     MatCheckboxModule ,
     MatInputModule,
     MatRadioModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [
     AngularFireAuth,
