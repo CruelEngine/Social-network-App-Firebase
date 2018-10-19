@@ -1,0 +1,37 @@
+<div style='display: flex;flex-direction: column;align-items: center;width:100%'>
+    <div>
+        <h1>Sign Up</h1>
+    </div>
+    <form [formGroup]='signUpForm' (ngSubmit)='onSignUp(signUpForm.value)' class='form'>
+        <!-- <fieldset> -->
+
+            <!-- <legend>Sign Up</legend> -->
+            <mat-form-field class='form-input'>
+                    <input matInput type='text' id='name' formControlName='name' placeholder="Name" >
+                </mat-form-field>
+                <mat-form-field class='form-input'>
+    
+                    <input matInput type='text' id='email' formControlName='email' placeholder="Email"/>
+                </mat-form-field>
+                <mat-form-field class='form-input'>
+    
+                    <input matInput type='password' id='password' formControlName='password' placeholder="Password"/>
+                </mat-form-field>
+                <mat-form-field class='form-input'>
+    
+                    <input matInput type='password' id='confirmPasseword' formControlName='retypePassword' placeholder="Confirm Password"/>
+                </mat-form-field>
+                <mat-form-field class='form-input'>
+    
+                    <input matInput type='text' formControlName='mobile' id='mobile' placeholder="Mobile"/>
+                </mat-form-field>
+                <mat-radio-group class='form-radio'>
+                    <mat-radio-button *ngFor="let gender of genders" [value]="gender.value">
+                      {{gender.name}}
+                    </mat-radio-button>
+                  </mat-radio-group>
+        <!-- </fieldset> -->
+
+        <button mat-raised-button type='submit' [disabled]='!signUpForm.valid' class='button-raised'>Sign Up</button>
+    </form>
+</div>
