@@ -31,7 +31,10 @@ import { Passwordequalvalidator } from './utils/password-equal-validator.directi
 
 
 //Material Imports
-import { MatCheckboxModule , MatInputModule , MatFormFieldModule,MatRadioModule,MatButtonModule , MatCardModule , MatDialogModule  } from '@angular/material';
+import { MatCheckboxModule , MatInputModule , 
+         MatFormFieldModule , MatRadioModule , 
+         MatButtonModule , MatCardModule , 
+         MatDialogModule  } from '@angular/material';
 
 
 
@@ -65,6 +68,7 @@ import { MatCheckboxModule , MatInputModule , MatFormFieldModule,MatRadioModule,
     AuthenticationService,
     UserService
   ],
+  entryComponents : [ErrorAlertComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

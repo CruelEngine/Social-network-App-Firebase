@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Gender } from '../gender';
 import { AuthenticationService } from '../../authentication.service';
 import {  MatDialog } from '@angular/material';
+import { ErrorAlertComponent } from 'src/app/error-alert/error-alert.component';
 
 @Component({
   selector: 'app-signup',
@@ -43,7 +44,10 @@ export class SignupComponent implements OnInit {
     }).catch((error) =>{
       this.errorMessage = error.message;
       this.showError = true;
-      this._matDialog.open()
+      this._matDialog.open(ErrorAlertComponent , {
+        width:'250px',
+        data:this.errorMessage
+      })
     })
   }
 
