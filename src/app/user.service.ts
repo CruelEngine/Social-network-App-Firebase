@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { User } from './user';
 import 'firebase/database';
-// import { USERS_CHILD } from './database-constants';
+import { ApiPath } from './api-path.enum';
+import { Observable } from 'rxjs';
+
 
 /**
  * User Service
@@ -19,7 +21,10 @@ export class UserService {
   constructor(private fireDb : AngularFireDatabase) { }
 
   public addUser(user : User) : void {
-    // this.fireDb.object(`${USER_CHILD}/${user.uid}`).set(user);
+    this.fireDb.object( `${ApiPath.USERS_CHILD}/${user.uid}`).set(user);
   }
 
+  public getUser(uid : string) : Observable<User> {
+    return this.fireDb.object<User>(`${ApiPath.USERS_CHILD}/${uid}`).valueChanges();
+  }
 }
