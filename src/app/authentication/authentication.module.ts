@@ -5,12 +5,20 @@ import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { LoginComponent } from './login/login.component';
 // import { PasswordequalvalidatorDirective } from './passwordequalvalidator.directive';
 
-import { MatFormFieldModule , MatInputModule , MatCardModule} from '@angular/material';
+import { MatFormFieldModule , MatInputModule , MatCardModule , MatButtonModule} from '@angular/material';
+
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    AuthenticationRoutingModule , MatFormFieldModule , MatCardModule , MatInputModule
+    AuthenticationRoutingModule ,
+    MatFormFieldModule ,
+    MatCardModule ,
+    MatInputModule ,
+    FormsModule ,
+    ReactiveFormsModule ,
+    MatButtonModule
   ],
   declarations: [LoginComponent],
   // declarations: [PasswordequalvalidatorDirective]

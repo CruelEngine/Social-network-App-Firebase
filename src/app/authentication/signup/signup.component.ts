@@ -31,8 +31,8 @@ export class SignupComponent implements OnInit {
       email : ['',Validators.required],
       password : ['',Validators.required],
       retypePassword : ['',Validators.required],
-      mobile : ['',Validators.required],
-      gender : [Gender.MALE ,Validators.required] ,
+      mobile : ['' , Validators.required],
+      gender : [Gender.MALE , Validators.required] ,
     });
   }
 
@@ -40,23 +40,23 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSignUp(value : any){
-    this._authenticationService.signUpWithEmail(value.email , value.password).then((userInfo: any)=>{
+  onSignUp(value: any) {
+    this._authenticationService.signUpWithEmail(value.email , value.password).then((userInfo: any) => {
       // console.log(userInfo)
-      const user : User = new User(value.email , value.name , value.mobile ,userInfo.uid , 0 , '');
+      const user: User = new User(value.email , value.name , value.mobile , userInfo.uid , 0 , '');
 
-    }).catch((error) =>{
+    }).catch((error) => {
       this.errorMessage = error.message;
       this.showError = true;
       this._matDialog.open(ErrorAlertComponent , {
-        width:'250px',
-        data:this.errorMessage
-      })
-    })
+        width: '250px',
+        data: this.errorMessage
+      });
+    });
   }
 
 
-  writeUser(user : User){
+  writeUser(user: User) {
     this._userService.addUser(user);
   }
 
