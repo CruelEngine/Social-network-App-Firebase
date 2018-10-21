@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 
 
-//Component
+// Component
 import { AppComponent } from './app.component';
 import { ErrorAlertComponent } from './error-alert/error-alert.component';
 import { SignupComponent } from './authentication/signup/signup.component';
@@ -13,9 +13,9 @@ import { SignupComponent } from './authentication/signup/signup.component';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//Auth
+// Auth
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 
@@ -23,18 +23,19 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 
-//services 
+// services
 
 import { AuthenticationService } from './authentication.service';
 import { UserService } from './user.service';
 import { Passwordequalvalidator } from './utils/password-equal-validator.directive';
 
 
-//Material Imports
-import { MatCheckboxModule , MatInputModule , 
-         MatFormFieldModule , MatRadioModule , 
-         MatButtonModule , MatCardModule , 
-         MatDialogModule  } from '@angular/material';
+// Material Imports
+
+import { MatCheckboxModule , MatInputModule ,
+         MatFormFieldModule , MatRadioModule ,
+         MatButtonModule , MatCardModule ,
+         MatDialogModule   } from '@angular/material';
 
 
 
@@ -54,7 +55,7 @@ import { MatCheckboxModule , MatInputModule ,
     BrowserAnimationsModule,
     RouterModule.forRoot([]),
     AuthenticationModule,
-    MatFormFieldModule , 
+    MatFormFieldModule ,
     MatCheckboxModule ,
     MatInputModule,
     MatRadioModule,
@@ -62,6 +63,7 @@ import { MatCheckboxModule , MatInputModule ,
     MatCardModule,
     MatDialogModule
   ],
+  exports : [MatFormFieldModule] ,
   providers: [
     AngularFireAuth,
     AngularFireDatabase,
