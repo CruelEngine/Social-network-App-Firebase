@@ -11,8 +11,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AuthenticationService {
 
   /**
-   * 
-   * @param AngularFireAuth provides the functionalities for authentication 
+   *
+   * @param AngularFireAuth provides the functionalities for authentication
    */
   constructor(private angularFireAuth : AngularFireAuth) { }
 
@@ -28,5 +28,13 @@ export class AuthenticationService {
     return this.angularFireAuth.auth.sendPasswordResetEmail(email);
   }
 
-  
+  public isAuthenticated() : boolean {
+    let user = this.angularFireAuth.auth.currentUser;
+    return user ? true : false;
+  }
+
+  public signOut(){
+    this.angularFireAuth.auth.signOut();
+  }
+
 }

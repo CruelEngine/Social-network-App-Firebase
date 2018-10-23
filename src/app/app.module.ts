@@ -11,6 +11,7 @@ import { SignupComponent } from './authentication/signup/signup.component';
 
 
 import { AuthenticationModule } from './authentication/authentication.module';
+import { MainappModule } from './mainapp/mainapp.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -61,7 +62,8 @@ import { MatCheckboxModule , MatInputModule ,
     MatRadioModule,
     MatButtonModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MainappModule
   ],
   exports : [MatFormFieldModule] ,
   providers: [
