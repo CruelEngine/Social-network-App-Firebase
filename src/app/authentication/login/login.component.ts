@@ -68,5 +68,9 @@ export class LoginComponent implements OnInit {
     this._router.navigate(['/signup']);
   }
 
+  navigateToUserProfile(){
+    this._router.navigate(['/profile']);
+  }
+
 
 }
