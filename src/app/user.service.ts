@@ -37,5 +37,18 @@ export class UserService {
     return this.userSubject;
   }
 
+  public updateName(user : User  , name : string ) : void {
+    this.fireDb.object(`${ApiPath.USERS_CHILD}/${user.uid}`).update({name : name});
+    this.saveUser(user);
+  }
 
+  public changeEmail(user : User , newEmail : string ) : void {
+    this.fireDb.object(`${ApiPath.USERS_CHILD}/${user.uid}`).update({email : newEmail});
+    this.saveUser(user);
+  }
+
+  public updateMobile(user : User , mobile : string ) : void {
+    this.fireDb.object(`${ApiPath.USERS_CHILD}/${user.uid}`).update({mobile:mobile});
+    this.saveUser(user);
+  }
 }
