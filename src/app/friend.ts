@@ -1,24 +1,24 @@
-export class User {
-  email: string;
+export class Friend {
   name: string;
   mobile: string;
+  email: string;
   uid: string;
-  friendCount: number;
+  time: string;
   image: string;
 
   constructor(
-    email: string,
     name: string,
     mobile: string,
+    email: string,
     uid: string,
-    friendCount: number,
+    time: string,
     image: string
   ) {
-    this.email = email;
     this.name = name;
     this.mobile = mobile;
+    this.email = email;
     this.uid = uid;
-    this.friendCount = friendCount;
+    this.time = time;
     this.image = image;
   }
 
@@ -38,11 +38,11 @@ export class User {
     return this.mobile;
   }
 
-  getFriendsCount() {
-    return this.friendCount;
-  }
-
   getImage() {
     return this.image;
+  }
+
+  getTime() {
+    return this.time;
   }
 }

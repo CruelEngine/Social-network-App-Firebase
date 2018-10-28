@@ -9,7 +9,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
-import { MatFormFieldModule , MatInputModule , MatCardModule} from '@angular/material'
+import { MatFormFieldModule , MatInputModule , MatCardModule} from '@angular/material';
+import { UserFriendsComponent } from './user-friends/user-friends.component'
 
 @NgModule({
   imports: [
@@ -21,6 +22,6 @@ import { MatFormFieldModule , MatInputModule , MatCardModule} from '@angular/mat
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [NavigationComponent, MainappComponent, PagenotfoundComponent, UserProfileComponent]
+  declarations: [NavigationComponent, MainappComponent, PagenotfoundComponent, UserProfileComponent, UserFriendsComponent]
 })
 export class MainappModule { }
