@@ -6,13 +6,12 @@
 export const environment = {
   production: false,
   // Initialize Firebase
-  firebase:
-  {
+  firebase: {
     apiKey: "AIzaSyBAMZEZzKVOKXmt9MQz76rkq93TGkkswTQ",
     authDomain: "friends-f35ce.firebaseapp.com",
     databaseURL: "https://friends-f35ce.firebaseio.com",
     projectId: "friends-f35ce",
-    storageBucket: "",
+    storageBucket: "gs://friends-f35ce.appspot.com",
     messagingSenderId: "648370815751"
   }
 };

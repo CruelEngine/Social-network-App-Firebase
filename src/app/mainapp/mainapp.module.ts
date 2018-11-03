@@ -10,7 +10,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 import { MatFormFieldModule , MatInputModule , MatCardModule} from '@angular/material';
-import { UserFriendsComponent } from './user-friends/user-friends.component'
+import { UserFriendsComponent } from './user-friends/user-friends.component';
+import { FriendsdatePipe } from './friendsdate.pipe'
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { UserFriendsComponent } from './user-friends/user-friends.component'
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [NavigationComponent, MainappComponent, PagenotfoundComponent, UserProfileComponent, UserFriendsComponent]
+  declarations: [NavigationComponent, MainappComponent, PagenotfoundComponent, UserProfileComponent, UserFriendsComponent, FriendsdatePipe]
 })
 export class MainappModule { }
