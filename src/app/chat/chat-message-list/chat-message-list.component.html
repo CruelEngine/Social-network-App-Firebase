@@ -1,3 +1,7 @@
-<p>
-  chat-message-list works!
-</p>
+<div class="chat-message-list-main-container">
+  <div #scrollContainer class="message-list-container" id="messages">
+    <ng-container *ngFor="let message of messages">
+      <app-chat-message [message]="message"></app-chat-message>
+    </ng-container>
+  </div>
+</div>
